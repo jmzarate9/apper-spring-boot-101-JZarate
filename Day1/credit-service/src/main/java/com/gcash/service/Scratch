@@ -1,0 +1,76 @@
+
+WHAT IS SPRING BOOT?
+
+    - SPRING FRAMEWORK
+        -- response to the complexity of Java Enterprise Edition
+        -- reducing boilerplate codes. Allowing Developers to focus on business implementation
+
+    - SPRING ECOSYSTEM
+        ------------------------------------------ Spring project -----------------------------------------
+        ------------------------------------------ Spring Cloud -------------------------------------------
+        ------------------------------------------ Spring Boot --------------------------------------------
+        ---- Spring LDAP ---- Spring Web Services ---- Spring Session ---- Spring Integration ---- More..--
+        ---- Spring Data ---- Spring Batch ---- Spring Security ---- Spring Session ---- Spring Kafka -----
+
+        ----- Web ----- Data ------------------ Spring Framework ----------------- AOP ------- Core ------
+
+    - SPRING BOOT
+        -- Auto-configuration
+            - Setup feature automagically
+        -- Standalone
+            - No need for web servers
+            - production-grade
+            - Spring-based applications that you can 'just run'.
+        -- Opinionated
+            - Has chosen way of doing things by default
+
+    - TYPICAL PROCESS FOR RUNNING JAVA WEB APPLICATIONS
+        -  Package Applications
+        -  Choose & Download web server
+        -  Configure Web Server
+        -
+
+    -  DEPENDENCY INJECTION
+        - Dependency Injection (DI) is a design pattern that removes the dependency from the programming code so that it can
+            be easy to manage and test the application. Dependency Injection makes our programming code loosely coupled.
+
+-- SEARCH FOR THE FOLLOWING TERMS
+@Data
+    - @Data generates all the boilerplate that is normally associated with simple POJOs (Plain Old Java Objects) and beans:
+        getters for all fields, setters for all non-final fields, and appropriate toString, equals and hashCode implementations
+        that involve the fields of the class, and a constructor that initializes all final fields, as well as all non-final
+        fields with no initializer that have been marked with @NonNull, in order to ensure the field is never null.
+@Bean
+    - Spring @Bean Annotation is applied on a method to specify that it returns a bean to be managed by Spring context.
+        Spring Bean annotation is usually declared in Configuration classes methods. In this case, bean methods may reference
+        other @Bean methods in the same class by calling them directly.
+
+@RestController
+    - Spring RestController annotation is a convenience annotation that is itself annotated with @Controller and @ResponseBody. This annotation is applied to a class to mark
+        it as a request handler. Spring RestController annotation is used to create RESTful web services using Spring MVC.
+
+@GetMapping
+    - shortcut for @RequestMapping(method = RequestMethod.GET)
+    - The GET HTTP request is used to get single or multiple resources and @GetMapping annotation for mapping HTTP GET requests onto specific handler methods.
+
+@PostMapping
+    - shortcut for @RequestMapping(method = RequestMethod.POST)
+    - The POST HTTP method is used to create a resource and @PostMapping annotation for mapping HTTP POST requests onto specific handler methods.
+
+@PutMapping
+    - shortcut for @RequestMapping(method = RequestMethod.PUT)
+    - The PUT HTTP method is used to update the resource and @PutMapping annotation for mapping HTTP PUT requests onto specific handler methods.
+
+@DeleteMapping
+    - shortcut for @RequestMapping(method =RequestMethod.DELETE)
+    - The DELETE HTTP method is used to delete the resource and @DeleteMapping annotation for mapping HTTP DELETE requests onto specific handler methods.
+
+@PatchMapping
+    - shortcut for @RequestMapping(method = RequestMethod.PATCH)
+    - The PATCH HTTP method is used when you want to apply a partial update to the resource and @PatchMapping annotation for mapping HTTP PATCH requests onto specific
+        handler methods.
+
+@Service
+@Component
+@Configuration
+@RequestMapping
