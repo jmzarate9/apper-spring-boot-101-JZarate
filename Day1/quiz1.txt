@@ -1,0 +1,10 @@
+1. Enterprise
+2. Boilerplate code includes the basic code and configuration needed to build a Spring Boot application.
+3. Spring
+4. Pivotal
+5. start.spring.io
+6. Spring-based applications that you can 'just run' or production-grade
+
+7 - 9. It is possible to manage and test the application easily by using a design pattern that eliminates dependencies from the programming code.
+
+10. mvn spring-boot:run
