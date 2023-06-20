@@ -14,6 +14,11 @@ WHAT IS SPRING BOOT?
 
         ----- Web ----- Data ------------------ Spring Framework ----------------- AOP ------- Core ------
 
+    - WHY SPRING?
+        - Flexible, Modular, Backward Compatible
+        - Large and active Community
+        - Continually innovates and evolves
+
     - SPRING BOOT
         -- Auto-configuration
             - Setup feature automagically
@@ -26,9 +31,9 @@ WHAT IS SPRING BOOT?
 
     - TYPICAL PROCESS FOR RUNNING JAVA WEB APPLICATIONS
         -  Package Applications
-        -  Choose & Download web server
-        -  Configure Web Server
-        -
+        -  Choose & Download webserver
+        -  Configure Webserver
+        -  Deploy Applications & Start Webserver
 
     -  DEPENDENCY INJECTION
         - Dependency Injection (DI) is a design pattern that removes the dependency from the programming code so that it can
