@@ -3,6 +3,7 @@ package com.apper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,13 +62,21 @@ public class AccountController {
         return responseList;
     }
 
-    @DeleteMapping("{accountId}")
-    public DeleteAccountResponse deleteAccount(@PathVariable String accountId) {
-        Account account = accountService.delete(accountId);
+    @PutMapping("{accountId}")
+    @ResponseStatus(HttpStatus.OK)
+    public UpdateAccountResponse updateAccount(@PathVariable String accountId, @RequestBody CreateAccountRequest request) {
+        accountService.update(accountId, request.getFirstName(), request.getLastName(), request.getEmail(), request.getPassword());
 
-        DeleteAccountResponse response = new DeleteAccountResponse();
-        response.setMessage("Delete Successful");
+        UpdateAccountResponse response = new UpdateAccountResponse();
+        response.setLastUpdate(LocalDateTime.now());
 
         return response;
     }
+
+    @DeleteMapping("{accountId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteAccount(@PathVariable String accountId) {
+        accountService.delete(accountId);
+    }
+
 }
