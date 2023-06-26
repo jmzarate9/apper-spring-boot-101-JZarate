@@ -40,12 +40,21 @@ public class AccountService {
         }
         return null;
     }
+
+    public List<Account> getAll() {
+        return accounts;
+    }
 //
 //    public Account update() {
 //
 //    }
 //
-//    public Account delete() {
-//
-//    }
+    public Account delete(String accountId) {
+        Account account = get(accountId);
+        if (account != null) {
+            accounts.remove(account);
+            return account;
+        }
+        return null;
+    }
 }

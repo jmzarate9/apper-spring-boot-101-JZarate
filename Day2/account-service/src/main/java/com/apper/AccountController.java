@@ -3,6 +3,9 @@ package com.apper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("account")
 public class AccountController {
@@ -20,6 +23,7 @@ public class AccountController {
 
         CreateAccountResponse response = new CreateAccountResponse();
         response.setVerificationCode(account.getVerificationCode());
+        response.setGeneratedId(account.getId());
 
     return response;
     }
@@ -34,6 +38,35 @@ public class AccountController {
         response.setLastName(account.getLastName());
         response.setUsername(account.getUsername());
         response.setRegistrationDate(account.getCreationDate());
+        response.setAccountId(account.getId());
+
+        return response;
+    }
+
+    @GetMapping("all")
+    public List<GetAccountResponse> getAllAccounts() {
+        List<GetAccountResponse> responseList = new ArrayList<>();
+
+        for (Account account : accountService.getAll()) {
+            GetAccountResponse response = new GetAccountResponse();
+            response.setBalance(account.getBalance());
+            response.setFirstName(account.getFirstName());
+            response.setLastName(account.getLastName());
+            response.setUsername(account.getUsername());
+            response.setRegistrationDate(account.getCreationDate());
+            response.setAccountId(account.getId());
+
+            responseList.add(response);
+        }
+        return responseList;
+    }
+
+    @DeleteMapping("{accountId}")
+    public DeleteAccountResponse deleteAccount(@PathVariable String accountId) {
+        Account account = accountService.delete(accountId);
+
+        DeleteAccountResponse response = new DeleteAccountResponse();
+        response.setMessage("Delete Successful");
 
         return response;
     }

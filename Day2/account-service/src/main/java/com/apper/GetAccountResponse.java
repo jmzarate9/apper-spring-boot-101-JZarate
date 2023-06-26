@@ -11,4 +11,5 @@ public class GetAccountResponse {
     private Double balance;
     private String username;
     private LocalDateTime registrationDate;
+    private String accountId;
 }
