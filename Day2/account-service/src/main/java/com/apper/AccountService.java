@@ -19,6 +19,7 @@ public class AccountService {
 
     public Account create(String firstName, String lastName, String username, String clearPassword) {
         Account account = new Account();
+
         //getNextId
         String id = idGeneratorService.getNextId();
 //        String id = UUID.randomUUID().toString();
