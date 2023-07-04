@@ -1,5 +1,6 @@
 package com.apper.estore;
 
+import com.apper.estore.payload.ServiceError;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -7,6 +8,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @ControllerAdvice // indicates that it provides centralized exception handling for multiple controllers in the application.
 public class ServiceExceptionHandler {
@@ -25,7 +29,9 @@ public class ServiceExceptionHandler {
     }
 
     @ExceptionHandler(InvalidUserAgeException.class)
-    public ResponseEntity<String> handleInvalidUserAgeException(InvalidUserAgeException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+    public ResponseEntity<Object> handleInvalidUserAgeException(InvalidUserAgeException ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 }
