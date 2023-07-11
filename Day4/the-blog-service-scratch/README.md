@@ -160,4 +160,9 @@
   }
 ]
 ```
-EMAIL SUBJECT: [Spring Boot 101 | Capstone] yourNaME
+### Submission
+Email Subject: [Spring Boot 101 | Capstone] YourName
+Includes:
+1. Link of the repo
+2. Key takeaways/
+3. [Optional] Brutal/Super Honest feedback to me :)
