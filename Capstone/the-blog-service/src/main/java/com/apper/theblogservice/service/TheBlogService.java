@@ -79,8 +79,8 @@ public class TheBlogService {
     }
 
     // TODO: Update Blog
-    public Blog updateBlog(String blog_id, String title, String body) throws BlogNotFoundException{
-        Blog blog = getBlog(blog_id);
+    public Blog updateBlog(String blogId, String title, String body) throws BlogNotFoundException{
+        Blog blog = getBlog(blogId);
 
         blog.setTitle(title);
         blog.setBody(body);
